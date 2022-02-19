@@ -35,4 +35,8 @@ public class Point {
             throw new IllegalArgumentException(DUPLICATED_LINE_ERROR_MESSAGE);
         }
     }
+
+    public boolean getRight() {
+        return right;
+    }
 }
