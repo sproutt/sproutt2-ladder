@@ -41,9 +41,25 @@
 * GameResultName(실행 결과 이름) 
   * String name;
   * 검증
+* Point
+  * boolean left;
+  * boolean right;
+  * 첫 번째 Point의 left 상태값은 false, 마지막 Point의 right 상태값은 false
+  * 이전 포인트의 right 값과 현재 포인트의 left 값은 일치
+    * 이전 포인트의 right 값이 false일 경우 현재 포인트의 right 값은 true or false
+    * 이전 포인트의 right 값이 true일 경우 현재 포인트의 right 값은 false
+* Line
+  * List<Point> points;
+* Ladder
+  * List<Line> lines;
   
-### 사다리 
-* 
+### 사다리 만들기
+* 사다리 라인이 생길 수 있는 조건은?
+  * 두 라인이 연속되어 존재할 수 없다.
+  * 두 사다리 사이의 라인이 존재하지 않을 수 있다.
+  
+
     
 ## 설계 중 고민
 * 실세계에서 중복된 이름이 존재할거라고 생각된다. 그래서 중복된 이름을 받을 수 있다.
+
