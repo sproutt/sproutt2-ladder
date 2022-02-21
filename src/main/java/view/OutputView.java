@@ -1,11 +1,13 @@
 package view;
 
 import java.util.List;
+import java.util.Map;
 
 public class OutputView {
     private static final String VERTICAL_BAR = "|";
     private static final String SPACE = "     ";
-    private static final String HYPHEN ="-----";
+    private static final String HYPHEN = "-----";
+    private static final String PRINT_LADDER_RESULT_MESSAGE = "사다리 결과";
 
     public OutputView() {
 
@@ -27,5 +29,28 @@ public class OutputView {
             return HYPHEN;
         }
         return SPACE;
+    }
+
+    public void printPlayers(List<String> names) {
+        System.out.println(PRINT_LADDER_RESULT_MESSAGE);
+        for (String name : names) {
+            System.out.printf("%5s ", name);
+        }
+        System.out.println();
+    }
+
+    public void printGameResultNames(List<String> gameResultNames) {
+        for (String gameResultName : gameResultNames) {
+            System.out.printf("%-5s ", gameResultName);
+        }
+        System.out.println();
+    }
+
+    public void printGameResult(Map<String, String> matchedGameResult, String name) {
+        if (!matchedGameResult.containsKey(name)) {
+            matchedGameResult.forEach((playerName, gameResultName) -> System.out.println(playerName + " : " + gameResultName));
+            return;
+        }
+        System.out.println(matchedGameResult.get(name));
     }
 }
