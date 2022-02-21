@@ -1,4 +1,6 @@
-package domain;
+package domain.ladder;
+
+import domain.Line.Line;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,9 +11,16 @@ public class Ladder {
 
     public Ladder(List<Line> lines) {
         this.lines = new ArrayList<>(lines);
+        decideAllDirection();
     }
 
     public List<Line> getLines() {
         return Collections.unmodifiableList(lines);
+    }
+
+    public void decideAllDirection() {
+        for (Line line : lines) {
+            line.decideDirection();
+        }
     }
 }

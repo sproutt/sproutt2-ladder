@@ -1,4 +1,6 @@
-package domain;
+package domain.Line;
+
+import domain.point.Point;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,8 +20,14 @@ public class Line {
 
     public List<Boolean> toBoolean() {
         return points.stream()
-                .limit(points.size()-1)
-                .map(point -> point.getRight())
+                .limit(points.size() - 1)
+                .map(point -> point.isRight())
                 .collect(Collectors.toList());
+    }
+
+    public void decideDirection() {
+        for (Point point : points) {
+            point.checkConnection();
+        }
     }
 }

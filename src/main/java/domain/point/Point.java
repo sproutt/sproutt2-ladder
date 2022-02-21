@@ -1,10 +1,11 @@
-package domain;
+package domain.point;
 
 public class Point {
     private static final String DUPLICATED_LINE_ERROR_MESSAGE = "[ERROR] 다리는 연속되어 존재할 수 없습니다.";
 
     private boolean left;
     private boolean right;
+    private Direction direction;
 
     public Point() {
     }
@@ -36,7 +37,23 @@ public class Point {
         }
     }
 
-    public boolean getRight() {
+    public void checkConnection() {
+        if (left) {
+            direction = Direction.LEFT;
+            return;
+        }
+        if (right) {
+            direction = Direction.RIGHT;
+            return;
+        }
+        direction = Direction.DOWN;
+    }
+
+    public boolean isRight() {
         return right;
+    }
+
+    public Direction getDirection() {
+        return direction;
     }
 }
