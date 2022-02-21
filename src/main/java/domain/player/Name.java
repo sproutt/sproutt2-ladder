@@ -1,4 +1,4 @@
-package domain;
+package domain.player;
 
 public class Name {
     private static final String NAME_LENGTH_ERROR = "[ERROR] 이름은 5글자를 초과할 수 없습니다.";
@@ -23,5 +23,9 @@ public class Name {
         if (name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException(NAME_LENGTH_ERROR);
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }

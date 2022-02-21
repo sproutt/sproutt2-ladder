@@ -1,4 +1,7 @@
-package domain;
+package domain.ladder;
+
+import domain.Line.Line;
+import domain.Line.LineGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
