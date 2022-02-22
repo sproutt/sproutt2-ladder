@@ -1,4 +1,4 @@
-package domain.Line;
+package domain.line;
 
 import domain.point.Point;
 

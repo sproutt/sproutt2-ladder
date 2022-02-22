@@ -7,13 +7,14 @@ public class Point {
     private boolean right;
     private Direction direction;
 
-    public Point() {
-    }
-
     public Point(boolean left, boolean right) {
         validateDuplicatedLine(left, right);
         this.left = left;
         this.right = right;
+    }
+
+    public static Point onlyFirstExist() {
+        return new Point(false, false);
     }
 
     public Point first() {
