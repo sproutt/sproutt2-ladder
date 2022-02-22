@@ -1,4 +1,4 @@
-package domain.Line;
+package domain.line;
 
 import domain.point.Point;
 
@@ -23,11 +23,5 @@ public class Line {
                 .limit(points.size() - 1)
                 .map(point -> point.isRight())
                 .collect(Collectors.toList());
-    }
-
-    public void decideDirection() {
-        for (Point point : points) {
-            point.checkConnection();
-        }
     }
 }

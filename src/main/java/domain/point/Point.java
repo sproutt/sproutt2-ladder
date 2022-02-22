@@ -11,6 +11,7 @@ public class Point {
         validateDuplicatedLine(left, right);
         this.left = left;
         this.right = right;
+        this.direction = checkConnection();
     }
 
     public static Point onlyFirstExist() {
@@ -38,16 +39,14 @@ public class Point {
         }
     }
 
-    public void checkConnection() {
+    public Direction checkConnection() {
         if (left) {
-            direction = Direction.LEFT;
-            return;
+            return Direction.LEFT;
         }
         if (right) {
-            direction = Direction.RIGHT;
-            return;
+            return Direction.RIGHT;
         }
-        direction = Direction.DOWN;
+        return Direction.DOWN;
     }
 
     public boolean isRight() {
