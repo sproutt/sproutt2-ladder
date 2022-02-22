@@ -10,10 +10,10 @@ public class LineGenerator {
     public static Line generate(int playerCount) {
         List<Point> points = new ArrayList<>();
         if (playerCount == 1) {
-            return new Line(generateSingleLine(points));
+            return new Line(generateSingleVerticalLine(points));
         }
 
-        return new Line(generateMultiLine(points, playerCount));
+        return new Line(generateMultiVerticalLine(points, playerCount));
     }
 
     public static Point generateFirstPoint() {
@@ -31,12 +31,12 @@ public class LineGenerator {
         return lastPoint.last(prePoint);
     }
 
-    public static List<Point> generateSingleLine(List<Point> points) {
+    public static List<Point> generateSingleVerticalLine(List<Point> points) {
         points.add(generateFirstPoint());
         return points;
     }
 
-    public static List<Point> generateMultiLine(List<Point> points, int playerCount) {
+    public static List<Point> generateMultiVerticalLine(List<Point> points, int playerCount) {
         points.add(generateFirstPoint());
         for (int i = 0; i < playerCount - 2; i++) {
             points.add(generateMiddlePoint(points.get(i)));

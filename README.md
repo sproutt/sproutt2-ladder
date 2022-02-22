@@ -65,3 +65,7 @@
     
 ## 설계 중 고민
 * 실세계에서 중복된 이름이 존재할거라고 생각된다. 그래서 중복된 이름을 받을 수 있다.
+
+generateSingleLine 메서드 리팩토링 하기 -> Point의 양 옆 연결다리가 false인 메서드를 추가해 
+generateSingleLine
+generateMultiLine 메서드 네임 바꾸기 Points 들을 생성하다는 의미로
