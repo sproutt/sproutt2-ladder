@@ -10,42 +10,20 @@ public class Referee {
 	private Map<String, String> map = new HashMap<>();
 
 	public ArrayList<Integer> matchingResults(Players players, int[][] ladderBlueprint) {
+
 		for (int i = 0; i < players.getPlayers().size(); i++) {
-			matchingEach(i, ladderBlueprint);
+			matchingEach(i * 2, ladderBlueprint);
+			System.out.println();
 		}
 		return resultIndex;
 	}
 
 	private void matchingEach(int playerIndex, int[][] ladderBlueprint) {
-		int index = 0;
-		if (playerIndex > 0) {
-			index = 1;
-			index *= 2*playerIndex;
-		}
-
+		int index = playerIndex;
 		for (int i = 0; i < ladderBlueprint.length; i++) {
-			for (int j = index; j < ladderBlueprint[i].length; j++) {
-				if (j == 0 && ladderBlueprint[i][j + 1] == IS_LADDER_BRIDGE_TRUE) {
-					index += 2;
-					break;
-				}
-				if (j == ladderBlueprint[i].length - 1 && ladderBlueprint[i][j - 1] == IS_LADDER_BRIDGE_TRUE) {
-					index -= 2;
-					break;
-				}
-				if (j != ladderBlueprint[i].length-1 && j != 0 && ladderBlueprint[i][j + 1] == IS_LADDER_BRIDGE_TRUE) {
-					index += 2;
-					break;
-				}
-				if (j != ladderBlueprint[i].length-1 && j != 0 && ladderBlueprint[i][j - 1] == IS_LADDER_BRIDGE_TRUE) {
-					index -= 2;
-					break;
-				}
-				break;
-			}
+			index = matchingLine(i, index, ladderBlueprint);
 		}
-		// index 1일때 0으로 인덱스 추가
-		resultIndex.add(index/2);
+		resultIndex.add(index / 2);
 	}
 
 	public void makeResult(Players players, ExecutionResults executionResults) {
