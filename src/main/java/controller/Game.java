@@ -45,7 +45,19 @@ public class Game {
             outputView.printOneLine(ladder.getLines().get(i).toBoolean());
         }
         outputView.printGameResultNames(gameResults.toGameResultNames());
-        outputView.printGameResult(matchedGameResult, inputPlayerName());
+
+        printMatchedGameResult(players, matchedGameResult);
+    }
+
+    private void printMatchedGameResult(Players players, Map<String, String> matchedGameResult) {
+        String playerName = inputPlayerName();
+        if(players.isContain(playerName)) {
+            outputView.printMatchedGameResult(matchedGameResult, playerName);
+            printMatchedGameResult(players, matchedGameResult);
+        }
+        if (playerName.equals("all")) {
+            outputView.printMatchedGameResults(matchedGameResult);
+        }
     }
 
     public List<Name> inputPlayer() {

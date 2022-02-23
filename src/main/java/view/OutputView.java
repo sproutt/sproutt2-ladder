@@ -47,11 +47,11 @@ public class OutputView {
         System.out.println();
     }
 
-    public void printGameResult(Map<String, String> matchedGameResult, String name) {
-        if (!matchedGameResult.containsKey(name)) {
-            matchedGameResult.forEach((playerName, gameResultName) -> System.out.println(playerName + " : " + gameResultName));
-            return;
-        }
-        System.out.println(matchedGameResult.get(name));
+    public void printMatchedGameResult(Map<String, String> matchedGameResult, String playerName) {
+        System.out.println(matchedGameResult.get(playerName));
+    }
+
+    public void printMatchedGameResults(Map<String, String> matchedGameResult) {
+        matchedGameResult.forEach((playerName, gameResultName) -> System.out.println(playerName + " : " + gameResultName));
     }
 }
