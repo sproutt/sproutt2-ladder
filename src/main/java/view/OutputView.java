@@ -15,6 +15,7 @@ public class OutputView {
 
     public void printOneLine(List<Boolean> bridges) {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(SPACE);
         stringBuilder.append(VERTICAL_BAR);
         bridges.forEach(bridge -> {
             stringBuilder.append(makeBridge(bridge));

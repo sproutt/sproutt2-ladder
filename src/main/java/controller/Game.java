@@ -44,8 +44,8 @@ public class Game {
         for (int i = 0; i < ladderHeight.getHeight(); i++) {
             outputView.printOneLine(ladder.getLines().get(i).toBoolean());
         }
-
-
+        outputView.printGameResultNames(gameResults.toGameResultNames());
+        outputView.printGameResult(matchedGameResult, inputPlayerName());
     }
 
     public List<Name> inputPlayer() {
