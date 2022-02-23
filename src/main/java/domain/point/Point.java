@@ -18,18 +18,18 @@ public class Point {
         return new Point(false, false);
     }
 
-    public Point first() {
+    public static Point first() {
         return new Point(false, RandomPointGenerator.generate());
     }
 
-    public Point next(Point prePoint) {
+    public static Point next(Point prePoint) {
         if (prePoint.right) {
             return new Point(prePoint.right, false);
         }
         return new Point(false, RandomPointGenerator.generate());
     }
 
-    public Point last(Point prePoint) {
+    public static Point last(Point prePoint) {
         return new Point(prePoint.right, false);
     }
 

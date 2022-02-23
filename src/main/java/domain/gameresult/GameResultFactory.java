@@ -7,7 +7,7 @@ import java.util.List;
 
 public class GameResultFactory {
 
-    public static GameResults from(List<String> gameResultNames, int positionY) {
+    public static GameResults from(List<GameResultName> gameResultNames, int positionY) {
         List<GameResult> gameResults = new ArrayList<>();
         for (int i = 0; i < gameResultNames.size(); i++) {
             gameResults.add(new GameResult(gameResultNames.get(i), new Position(i, positionY)));

@@ -16,23 +16,24 @@ public class LineGenerator {
         return new Line(generateMultiVerticalLine(points, playerCount));
     }
 
+    public static Point generateOnlyFirstExist() {
+        return Point.onlyFirstExist();
+    }
+
     public static Point generateFirstPoint() {
-        Point prePoint = new Point();
-        return prePoint.first();
+        return Point.first();
     }
 
     public static Point generateMiddlePoint(Point prePoint) {
-        Point presentPoint = new Point();
-        return presentPoint.next(prePoint);
+        return Point.next(prePoint);
     }
 
     public static Point generateLastPoint(Point prePoint) {
-        Point lastPoint = new Point();
-        return lastPoint.last(prePoint);
+        return Point.last(prePoint);
     }
 
     public static List<Point> generateSingleVerticalLine(List<Point> points) {
-        points.add(generateFirstPoint());
+        points.add(generateOnlyFirstExist());
         return points;
     }
 

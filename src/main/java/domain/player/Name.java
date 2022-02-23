@@ -1,5 +1,7 @@
 package domain.player;
 
+import exception.NameFormatException;
+
 public class Name {
     private static final String NAME_LENGTH_ERROR = "[ERROR] 이름은 5글자를 초과할 수 없습니다.";
     private static final String EMPTY_NAME_ERROR = "[ERROR] 이름은 공백일 수 없습니다.";
@@ -13,9 +15,9 @@ public class Name {
         this.name = name;
     }
 
-    private void validateEmptyName(String name) {
+    private void validateEmptyName(String name) throws NameFormatException {
         if (name.isEmpty()) {
-            throw new IllegalArgumentException(EMPTY_NAME_ERROR);
+            throw new NameFormatException(EMPTY_NAME_ERROR);
         }
     }
 

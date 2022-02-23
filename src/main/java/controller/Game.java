@@ -35,13 +35,13 @@ public class Game {
         Height ladderHeight = new Height(inputHeight());
         GameResults gameResults = GameResultFactory.from(gameResultNames, ladderHeight.getHeight());
 
-        Ladder ladder = LadderGenerator.generate(ladderHeight, players.size());
+        Ladder ladder = LadderGenerator.generate(ladderHeight.getHeight(), players.size());
         players.moveAll(ladder.getLines());
 
         Map<String, String> matchedGameResult = PlayerGameResult.match(players, gameResults);
 
         outputView.printPlayers(players.toPlayerNames());
-        for (int i = 0; i < ladderHeight; i++) {
+        for (int i = 0; i < ladderHeight.getHeight(); i++) {
             outputView.printOneLine(ladder.getLines().get(i).toBoolean());
         }
 

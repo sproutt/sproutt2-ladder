@@ -6,8 +6,8 @@ public class GameResult {
     private GameResultName name;
     private Position position;
 
-    public GameResult(String name, Position position) {
-        this.name = new GameResultName(name);
+    public GameResult(GameResultName name, Position position) {
+        this.name = name;
         this.position = position;
     }
 
