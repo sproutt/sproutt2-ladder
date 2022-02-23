@@ -19,9 +19,9 @@ public class Name {
         }
     }
 
-    private void validateNameLength(String name) {
+    private void validateNameLength(String name) throws NameFormatException {
         if (name.length() > MAX_NAME_LENGTH) {
-            throw new IllegalArgumentException(NAME_LENGTH_ERROR);
+            throw new NameFormatException(NAME_LENGTH_ERROR);
         }
     }
 

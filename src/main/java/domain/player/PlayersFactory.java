@@ -6,7 +6,7 @@ import java.util.List;
 public class PlayersFactory {
     private static final int INITIAL_Y_POSITION = 0;
 
-    public static Players from(List<String> playerNames) {
+    public static Players from(List<Name> playerNames) {
         List<Player> players = new ArrayList<>();
         for (int i = 0; i < playerNames.size(); i++) {
             players.add(new Player(playerNames.get(i), new Position(i, INITIAL_Y_POSITION)));

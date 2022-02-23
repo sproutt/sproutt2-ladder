@@ -1,6 +1,6 @@
 package domain.player;
 
-import domain.Line.Line;
+import domain.line.Line;
 import domain.point.Direction;
 
 import java.util.List;
@@ -9,8 +9,8 @@ public class Player {
     private Name name;
     private Position position;
 
-    public Player(String name, Position position) {
-        this.name = new Name(name);
+    public Player(Name name, Position position) {
+        this.name = name;
         this.position = position;
     }
 

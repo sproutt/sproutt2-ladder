@@ -1,6 +1,6 @@
 package domain.player;
 
-import domain.Line.Line;
+import domain.line.Line;
 
 import java.util.ArrayList;
 import java.util.Collections;
