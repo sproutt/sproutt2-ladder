@@ -37,6 +37,8 @@ public class Game {
 
 		outputView.renderLadderResult(players.renderPlayers(), ladder.blueprintToLadderShape(),
 				executionResults.renderResults());
+
+
 		// 레프리 로직 넣고
 		Referee referee = new Referee();
 		referee.matchingResults(players, ladderBlueprint);
