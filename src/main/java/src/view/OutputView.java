@@ -3,33 +3,31 @@ package src.view;
 import java.util.Map;
 
 import src.dto.LadderBluePrintDto;
-import src.model.Ladder;
 
 public class OutputView {
 
 	private static final String LADDER_RESULT_RENDER_MESSAGE = "사다리 결과";
 	private static final String EXECUTION_RESULT_MESSAGE = "실행 결과";
 
-	public StringBuilder ladderRenderer(LadderBluePrintDto ladderBluePrintDto) {
-		StringBuilder sb = new StringBuilder();
+	private static final int IS_LADDER_BRIDGE_TRUE = 1;
+	private static final int IS_LADDER_BRIDGE_FALSE = 0;
+	private static final int IS_VERTICAL_BRIDGE_VALUE = -1;
+
+
+	private static final String VERTICAL_BRIDGE = "|";
+	private static final String HORIZON_BRIDGE = "-----";
+	private static final String EMPTY_BRIDGE = "     ";
+
+	public void ladderRenderer(LadderBluePrintDto ladderBluePrintDto) {
+		int[][] ladderBlueprint = ladderBluePrintDto.getLadderBlueprint();
 		for (int i = 0; i < ladderBluePrintDto.getLadderBlueprint().length; i++) {
-			sb.append(" ");
-			innerLadderRenderer(i, sb, ladderBluePrintDto);
+			innerLadderRenderer(ladderBlueprint[i]);
 		}
-		return sb;
 	}
 
-	private void innerLadderRenderer(int i, StringBuilder sb, LadderBluePrintDto ladderBluePrintDto) {
-		for (int j = 0; j < ladderBluePrintDto.getLadderBlueprint()[i].length; j++) {
-			if (j % 2 == 0 && ladderBluePrintDto.getLadderBlueprint()[i][j] == 0) {
-				sb.append("|");
-			}
-			if (j >= 1 && (j % 2) == 1 && ladderBluePrintDto.getLadderBlueprint()[i][j] == 0) {
-				sb.append("     ");
-			}
-			if (j >= 1 && (j % 2) == 1 && ladderBluePrintDto.getLadderBlueprint()[i][j] == 1) {
-				sb.append("-----");
-			}
+	private void innerLadderRenderer(int[] line) {
+		for (int j = 0; j < line.length; j++) {
+			printBridge(line[j]);
 		}
 		sb.append("\n");
 	}
@@ -37,7 +35,7 @@ public class OutputView {
 	public void renderLadderResult(StringBuilder sbPlayers, LadderBluePrintDto ladderBluePrintDto, StringBuilder sbResult){
 		System.out.println("\n" + LADDER_RESULT_RENDER_MESSAGE + "\n");
 		System.out.println(sbPlayers.toString());
-		System.out.print(ladderRenderer(ladderBluePrintDto));
+		ladderRenderer(ladderBluePrintDto);
 		System.out.println(sbResult.toString());
 	}
 
