@@ -1,6 +1,6 @@
 package src.dto;
 
-import src.model.Ladder;
+import src.model.ladder.Ladder;
 
 public class LadderBluePrintDto {
 	public int [][] ladderBlueprint;
