@@ -4,14 +4,15 @@ import java.util.List;
 import java.util.Map;
 
 import src.dto.LinesDto;
+import src.dto.PlayersDto;
 import src.model.ExecutionResults;
-import src.model.Player;
-import src.model.Players;
 import src.model.Referee;
 import src.model.ladder.Bridge;
 import src.model.ladder.Ladder;
 import src.model.ladder.LadderMaker;
 import src.model.ladder.Line;
+import src.model.player.Player;
+import src.model.player.Players;
 import src.view.InputView;
 import src.view.OutputView;
 
