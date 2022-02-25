@@ -5,7 +5,8 @@ import java.util.Map;
 
 import src.dto.LinesDto;
 import src.dto.PlayersDto;
-import src.model.ExecutionResults;
+import src.dto.ResultsDto;
+import src.model.excutionResults.ExecutionResults;
 import src.model.Referee;
 import src.model.ladder.Bridge;
 import src.model.ladder.Ladder;

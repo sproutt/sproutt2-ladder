@@ -6,6 +6,7 @@ import java.util.Map;
 import src.dto.BridgesDto;
 import src.dto.LinesDto;
 import src.dto.PlayersDto;
+import src.dto.ResultsDto;
 
 public class OutputView {
 
@@ -23,17 +24,25 @@ public class OutputView {
 
 	private static final String PLAYER_NAME_FORMAT = "%5s ";
 
+	public void renderLadderResult(PlayersDto playersDto, LinesDto ladderBluePrintDto, ResultsDto resultsDto){
+		System.out.println(LADDER_RESULT_RENDER_MESSAGE);
+		playersRenderer(playersDto);
+		ladderRenderer(ladderBluePrintDto);
+		resultsRenderer(resultsDto);
+	}
+
 	public void playersRenderer (PlayersDto playersDto) {
 		List<String> names = playersDto.getNames();
 		for (String name : names) {
-			System.out.printf(PLAYER_NAME_FORMAT,name);
+			System.out.printf(OUTPUT_FORMAT,name);
 		}
+		System.out.print(System.lineSeparator());
 	}
 
-	public void ladderRenderer(LadderBluePrintDto ladderBluePrintDto) {
-		int[][] ladderBlueprint = ladderBluePrintDto.getLadderBlueprint();
-		for (int i = 0; i < ladderBluePrintDto.getLadderBlueprint().length; i++) {
-			innerLadderRenderer(ladderBlueprint[i]);
+	public void ladderRenderer(LinesDto linesDto) {
+		List<BridgesDto> bridgesDtos = linesDto.getLinesDto();
+		for (int i = 0; i < bridgesDtos.size(); i++) {
+			innerLadderRenderer(bridgesDtos.get(i));
 		}
 	}
 
@@ -45,11 +54,12 @@ public class OutputView {
 		sb.append("\n");
 	}
 
-	public void renderLadderResult(StringBuilder sbPlayers, LadderBluePrintDto ladderBluePrintDto, StringBuilder sbResult){
-		System.out.println("\n" + LADDER_RESULT_RENDER_MESSAGE + "\n");
-		playersRenderer(playersDto);
-		ladderRenderer(ladderBluePrintDto);
-		System.out.println(sbResult.toString());
+	public void resultsRenderer (ResultsDto resultsDto){
+		List<String> results = resultsDto.getResults();
+		for (String result : results) {
+			System.out.printf(OUTPUT_FORMAT, result);
+		}
+		System.out.print(System.lineSeparator());
 	}
 
 
