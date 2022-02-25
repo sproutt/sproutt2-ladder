@@ -1,13 +1,23 @@
 package src.model.ladder;
 
-public class Ladder {
-	int[][] ladderBlueprint;
+import java.util.List;
 
-	public Ladder(int[][] ladderBlueprint) {
-		this.ladderBlueprint = ladderBlueprint;
+public class Ladder {
+	private List<Line> lines;
+
+	public Ladder(List<Line> lines) {
+		this.lines = lines;
 	}
 
-	public int[][] getLadderBlueprint() {
-		return ladderBlueprint;
+	public List<Line> getLines() {
+		return lines;
+	}
+
+	public int getSize(){
+		return lines.size();
+	}
+
+	public Line getLine(int yIndex){
+		return lines.get(yIndex);
 	}
 }
