@@ -4,21 +4,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import src.model.ladder.Ladder;
+import src.model.ladder.Line;
+
 public class Referee {
 	private static final int IS_LADDER_BRIDGE_TRUE = 1;
+
 	private ArrayList<Integer> resultIndex = new ArrayList<>();
 	private Map<String, String> map = new HashMap<>();
 
-	public ArrayList<Integer> matchingResults(Players players, int[][] ladderBlueprint) {
+	public ArrayList<Integer> matchingResults(Players players, Ladder ladder) {
 
 		for (int i = 0; i < players.getPlayers().size(); i++) {
-			matchingEach(i * 2, ladderBlueprint);
+			matchingEach(i * 2, ladder);
 			System.out.println();
 		}
 		return resultIndex;
 	}
 
-	private void matchingEach(int playerIndex, int[][] ladderBlueprint) {
+	private void matchingEach(int playerIndex, Ladder ladder) {
 		int index = playerIndex;
 		for (int i = 0; i < ladderBlueprint.length; i++) {
 			index = matchingLine(i, index, ladderBlueprint);

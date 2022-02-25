@@ -1,13 +1,17 @@
 package src.controller;
 
+import java.util.List;
 import java.util.Map;
 
+import src.dto.LinesDto;
 import src.model.ExecutionResults;
-import src.model.Ladder;
-import src.model.LadderMaker;
 import src.model.Player;
 import src.model.Players;
 import src.model.Referee;
+import src.model.ladder.Bridge;
+import src.model.ladder.Ladder;
+import src.model.ladder.LadderMaker;
+import src.model.ladder.Line;
 import src.view.InputView;
 import src.view.OutputView;
 
@@ -31,9 +35,17 @@ public class Game {
 
 		// ladder 로직 Ladder.makeLadder(payers, executionResults);
 		int ladderHeight = inputView.inputLadderHeight();
-		LadderMaker lm = new LadderMaker(ladderHeight, players.getPlayers().size());
-		int[][] ladderBlueprint = lm.makeLadder();
-		Ladder ladder = new Ladder(ladderBlueprint);
+		LadderMaker lm = new LadderMaker(ladderHeight);
+		Ladder ladder = lm.makeLadder(players.getPlayers().size());
+
+		List<Line> lines = ladder.getLines();
+		for (Line line : lines){
+			List<Bridge> bridges = line.getLine();
+			for(Bridge bridge : bridges){
+				System.out.print(bridge.getValue() + " ");
+			}
+			System.out.println();
+		}
 
 		outputView.renderLadderResult(players.renderPlayers(), ladder.blueprintToLadderShape(),
 				executionResults.renderResults());
@@ -41,7 +53,7 @@ public class Game {
 
 		// 레프리 로직 넣고
 		Referee referee = new Referee();
-		referee.matchingResults(players, ladderBlueprint);
+		referee.matchingResults(players, ladder);
 		referee.makeResult(players, executionResults);
 
 		askResult(players, referee);

@@ -1,8 +1,10 @@
 package src.view;
 
+import java.util.List;
 import java.util.Map;
 
-import src.dto.LadderBluePrintDto;
+import src.dto.BridgesDto;
+import src.dto.LinesDto;
 
 public class OutputView {
 
@@ -25,9 +27,10 @@ public class OutputView {
 		}
 	}
 
-	private void innerLadderRenderer(int[] line) {
-		for (int j = 0; j < line.length; j++) {
-			printBridge(line[j]);
+	private void innerLadderRenderer(BridgesDto bridgesDto) {
+		List<Integer> bridges = bridgesDto.getBridges();
+		for (int j = 0; j < bridges.size(); j++) {
+			printBridge(bridges.get(j));
 		}
 		sb.append("\n");
 	}
