@@ -5,6 +5,7 @@ import java.util.Map;
 
 import src.dto.BridgesDto;
 import src.dto.LinesDto;
+import src.dto.PlayersDto;
 
 public class OutputView {
 
@@ -19,6 +20,15 @@ public class OutputView {
 	private static final String VERTICAL_BRIDGE = "|";
 	private static final String HORIZON_BRIDGE = "-----";
 	private static final String EMPTY_BRIDGE = "     ";
+
+	private static final String PLAYER_NAME_FORMAT = "%5s ";
+
+	public void playersRenderer (PlayersDto playersDto) {
+		List<String> names = playersDto.getNames();
+		for (String name : names) {
+			System.out.printf(PLAYER_NAME_FORMAT,name);
+		}
+	}
 
 	public void ladderRenderer(LadderBluePrintDto ladderBluePrintDto) {
 		int[][] ladderBlueprint = ladderBluePrintDto.getLadderBlueprint();
@@ -37,7 +47,7 @@ public class OutputView {
 
 	public void renderLadderResult(StringBuilder sbPlayers, LadderBluePrintDto ladderBluePrintDto, StringBuilder sbResult){
 		System.out.println("\n" + LADDER_RESULT_RENDER_MESSAGE + "\n");
-		System.out.println(sbPlayers.toString());
+		playersRenderer(playersDto);
 		ladderRenderer(ladderBluePrintDto);
 		System.out.println(sbResult.toString());
 	}

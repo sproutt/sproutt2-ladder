@@ -16,25 +16,6 @@ public class Players {
 		}
 	}
 
-	public StringBuilder renderPlayers(){
-		StringBuilder sb = new StringBuilder();
-		for(Player player : players){
-			String name = player.getName();
-			if (name.length() <= 5){
-				int blank = 5 - name.length() + 1;
-				sb.append(name);
-				appendBlank(blank, sb);
-			}
-		}
-		return sb;
-	}
-
-	private void appendBlank(int blank, StringBuilder sb){
-		for (int i = 0; i < blank; i++) {
-			sb.append(" ");
-		}
-	}
-
 	public List<Player> getPlayers() {
 		return players;
 	}
