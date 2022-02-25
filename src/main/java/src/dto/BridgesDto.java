@@ -9,7 +9,7 @@ import src.model.ladder.Line;
 public class BridgesDto {
 	private List<Integer> bridges;
 
-	public BridgesDto(List<Integer> values) {
+	private BridgesDto(List<Integer> values) {
 		this.bridges = values;
 	}
 
