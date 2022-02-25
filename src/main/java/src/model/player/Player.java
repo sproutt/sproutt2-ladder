@@ -1,13 +1,14 @@
-package src.model;
+package src.model.player;
 
 public class Player {
-	private String name;
+	private Name name;
 
 	public Player(String name) {
 		this.name = name;
 	}
 
 	public String getName() {
-		return name;
+		return name.getName();
 	}
+
 }

@@ -1,4 +1,4 @@
-package src.model;
+package src.model.player;
 
 import java.util.ArrayList;
 import java.util.List;
