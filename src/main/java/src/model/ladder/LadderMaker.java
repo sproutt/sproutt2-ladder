@@ -13,29 +13,27 @@ public class LadderMaker {
 		this.playerNumber = playerNumber;
 	}
 
-	public int[][] makeLadder() {
-		int[][] ladderBlueprint = new int[height.getHeight()][(2 * playerNumber) - 1];
+	public Ladder makeLadder(int playerNumber) {
+		List<Line> lines = new ArrayList<>();
 
-		for (int i = 0; i < ladderBlueprint.length; i++) {
-			ladderBlueprint[i] = makeLine();
+		for (int i = 0; i < height.getHeight(); i++) {
+			lines.add(makeLine(playerNumber));
 		}
 		return ladderBlueprint;
 	}
 
-	private int [] makeLine() {
-
-		int[] line = new int[2 * playerNumber - 1];
-		for (int i = 0; i < line.length; i++) {
-			line[i] = -1;
-			makeBridge(line, i);
+	private Line makeLine(int playerNumber) {
+		List<Bridge> bridges = new ArrayList<>();
+		for (int i = 0; i < (2 * playerNumber) - 1; i++) {
+			makeBridge(bridges, i);
 		}
-		return line;
+		return new Line(bridges);
 	}
 
 	private void makeBridge(int[] line, int i) {
 		Random random = new Random();
 		if (i == 1) {
-			line[i] = random.nextInt(2);
+			bridges.add(new Bridge(random.nextInt(2)));
 		}
 		if (i > 1 && i % 2 == 1 && line[i - 2] == 1) {
 			line[i] = 0;
