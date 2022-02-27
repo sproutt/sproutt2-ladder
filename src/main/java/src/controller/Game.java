@@ -19,6 +19,8 @@ import src.view.OutputView;
 
 public class Game {
 
+	private static final String RESULT_ALL_INPUT_MESSAGE = "all";
+
 	private InputView inputView;
 	private OutputView outputView;
 
@@ -40,9 +42,8 @@ public class Game {
 		LadderMaker lm = new LadderMaker(ladderHeight);
 		Ladder ladder = lm.makeLadder(players.getPlayers().size());
 
-		outputView.renderLadderResult(players.renderPlayers(), ladder.blueprintToLadderShape(),
-				executionResults.renderResults());
-
+		outputView.renderLadderResult(PlayersDto.from(players.getPlayers()), LinesDto.from(ladder),
+				ResultsDto.from(executionResults.getExecutionsResults()));
 
 		// 레프리 로직 넣고
 		Referee referee = new Referee();
@@ -54,7 +55,7 @@ public class Game {
 
 	private void askResult(Players players, Referee referee) {
 		String specifyPlayer = inputView.inputSpecifyPlayer();
-		if (specifyPlayer.equals("all")) {
+		if (specifyPlayer.equals(RESULT_ALL_INPUT_MESSAGE)) {
 			Map<Player, ExecutionResult> resultAll = referee.findAll();
 			outputView.printAllResult(ResultAllDto.from(resultAll));
 			return;
