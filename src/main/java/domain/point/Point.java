@@ -40,10 +40,10 @@ public class Point {
     }
 
     public Direction checkConnection() {
-        if (left) {
+        if (left & !right) {
             return Direction.LEFT;
         }
-        if (right) {
+        if (right & !left) {
             return Direction.RIGHT;
         }
         return Direction.DOWN;
