@@ -21,4 +21,8 @@ public class GameResults {
                 .map(gameResult -> gameResult.getName())
                 .collect(Collectors.toList());
     }
+
+    public int size() {
+        return gameResults.size();
+    }
 }
