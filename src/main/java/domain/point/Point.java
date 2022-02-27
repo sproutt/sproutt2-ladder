@@ -1,14 +1,14 @@
 package domain.point;
 
 public class Point {
-    private static final String DUPLICATED_LINE_ERROR_MESSAGE = "[ERROR] 다리는 연속되어 존재할 수 없습니다.";
+    private static final String CONTINUOUS_CONNECTION_BRIDGE_ERROR_MESSAGE = "[ERROR] 다리는 연속되어 존재할 수 없습니다.";
 
     private boolean left;
     private boolean right;
     private Direction direction;
 
     public Point(boolean left, boolean right) {
-        validateDuplicatedLine(left, right);
+        validateContinuousConnectionBridge(left, right);
         this.left = left;
         this.right = right;
         this.direction = checkConnection();
@@ -33,9 +33,9 @@ public class Point {
         return new Point(prePoint.right, false);
     }
 
-    private void validateDuplicatedLine(boolean left, boolean right) {
+    private void validateContinuousConnectionBridge(boolean left, boolean right) {
         if (left && right) {
-            throw new IllegalArgumentException(DUPLICATED_LINE_ERROR_MESSAGE);
+            throw new IllegalArgumentException(CONTINUOUS_CONNECTION_BRIDGE_ERROR_MESSAGE);
         }
     }
 
@@ -53,7 +53,13 @@ public class Point {
         return right;
     }
 
+    public boolean isLeft() {
+        return left;
+    }
+
     public Direction getDirection() {
         return direction;
     }
+
+
 }
