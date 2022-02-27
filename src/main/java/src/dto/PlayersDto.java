@@ -9,7 +9,7 @@ import src.model.player.Player;
 public class PlayersDto {
 	private List<String> names;
 
-	private PlayersDto(List<String> names){
+	private PlayersDto(List<String> names) {
 		this.names = new ArrayList<>(names);
 	}
 

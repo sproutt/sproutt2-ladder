@@ -8,7 +8,7 @@ import src.model.excutionResults.ExecutionResult;
 public class ResultsDto {
 	private List<String> results;
 
-	private ResultsDto(List<String> results){
+	private ResultsDto(List<String> results) {
 		this.results = results;
 	}
 

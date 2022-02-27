@@ -23,8 +23,8 @@ public class Name {
 		}
 	}
 
-	private void validateEmptyName(String name){
-		if (name.length() == 0){
+	private void validateEmptyName(String name) {
+		if (name.length() == 0) {
 			throw new IllegalArgumentException(EMPTY_NAME_ERROR_MESSAGE);
 		}
 	}

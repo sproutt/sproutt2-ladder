@@ -7,13 +7,11 @@ import src.dto.LinesDto;
 import src.dto.PlayersDto;
 import src.dto.ResultAllDto;
 import src.dto.ResultsDto;
+import src.model.Referee;
 import src.model.excutionResults.ExecutionResult;
 import src.model.excutionResults.ExecutionResults;
-import src.model.Referee;
-import src.model.ladder.Bridge;
 import src.model.ladder.Ladder;
 import src.model.ladder.LadderMaker;
-import src.model.ladder.Line;
 import src.model.player.Player;
 import src.model.player.Players;
 import src.view.InputView;
@@ -42,15 +40,6 @@ public class Game {
 		LadderMaker lm = new LadderMaker(ladderHeight);
 		Ladder ladder = lm.makeLadder(players.getPlayers().size());
 
-		List<Line> lines = ladder.getLines();
-		for (Line line : lines){
-			List<Bridge> bridges = line.getLine();
-			for(Bridge bridge : bridges){
-				System.out.print(bridge.getValue() + " ");
-			}
-			System.out.println();
-		}
-
 		outputView.renderLadderResult(players.renderPlayers(), ladder.blueprintToLadderShape(),
 				executionResults.renderResults());
 
@@ -65,7 +54,7 @@ public class Game {
 
 	private void askResult(Players players, Referee referee) {
 		String specifyPlayer = inputView.inputSpecifyPlayer();
-		if(specifyPlayer.equals("all")) {
+		if (specifyPlayer.equals("all")) {
 			Map<Player, ExecutionResult> resultAll = referee.findAll();
 			outputView.printAllResult(ResultAllDto.from(resultAll));
 			return;
@@ -74,6 +63,5 @@ public class Game {
 		List<Player> specifyPlayers = players.findPlayer(specifyPlayer);
 		List<ExecutionResult> executionResults = referee.find(specifyPlayers);
 		outputView.printSingleResult(ResultsDto.from(executionResults));
-
 	}
 }

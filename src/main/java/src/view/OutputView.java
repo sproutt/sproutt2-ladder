@@ -18,24 +18,23 @@ public class OutputView {
 	private static final int IS_LADDER_BRIDGE_FALSE = 0;
 	private static final int IS_VERTICAL_BRIDGE_VALUE = -1;
 
-
 	private static final String VERTICAL_BRIDGE = "|";
 	private static final String HORIZON_BRIDGE = "-----";
 	private static final String EMPTY_BRIDGE = "     ";
 
 	private static final String PLAYER_NAME_FORMAT = "%5s ";
 
-	public void renderLadderResult(PlayersDto playersDto, LinesDto ladderBluePrintDto, ResultsDto resultsDto){
+	public void renderLadderResult(PlayersDto playersDto, LinesDto ladderBluePrintDto, ResultsDto resultsDto) {
 		System.out.println(LADDER_RESULT_RENDER_MESSAGE);
 		playersRenderer(playersDto);
 		ladderRenderer(ladderBluePrintDto);
 		resultsRenderer(resultsDto);
 	}
 
-	public void playersRenderer (PlayersDto playersDto) {
+	public void playersRenderer(PlayersDto playersDto) {
 		List<String> names = playersDto.getNames();
 		for (String name : names) {
-			System.out.printf(OUTPUT_FORMAT,name);
+			System.out.printf(OUTPUT_FORMAT, name);
 		}
 		System.out.print(System.lineSeparator());
 	}
@@ -55,14 +54,13 @@ public class OutputView {
 		sb.append("\n");
 	}
 
-	public void resultsRenderer (ResultsDto resultsDto){
+	public void resultsRenderer(ResultsDto resultsDto) {
 		List<String> results = resultsDto.getResults();
 		for (String result : results) {
 			System.out.printf(OUTPUT_FORMAT, result);
 		}
 		System.out.print(System.lineSeparator());
 	}
-
 
 	public void printSingleResult(ResultsDto resultsDto) {
 		System.out.println(EXECUTION_RESULT_MESSAGE);

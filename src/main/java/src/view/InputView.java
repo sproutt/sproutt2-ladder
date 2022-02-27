@@ -29,7 +29,7 @@ public class InputView {
 		return scanner.nextInt();
 	}
 
-	public String inputSpecifyPlayer(){
+	public String inputSpecifyPlayer() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println(INPUT_SPECIFY_PLAYER_RESULT_MESSAGE);
 		return scanner.nextLine();

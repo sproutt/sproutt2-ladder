@@ -15,8 +15,8 @@ public class ExecutionResult {
 		return result;
 	}
 
-	private void validateEmptyResult(String name){
-		if (name.length() == 0){
+	private void validateEmptyResult(String name) {
+		if (name.length() == 0) {
 			throw new IllegalArgumentException(EMPTY_RESULT_ERROR_MESSAGE);
 		}
 	}

@@ -13,11 +13,11 @@ public class Ladder {
 		return lines;
 	}
 
-	public int getSize(){
+	public int getSize() {
 		return lines.size();
 	}
 
-	public Line getLine(int yIndex){
+	public Line getLine(int yIndex) {
 		return lines.get(yIndex);
 	}
 }

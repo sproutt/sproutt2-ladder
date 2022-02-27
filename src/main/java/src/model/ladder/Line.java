@@ -9,7 +9,7 @@ public class Line {
 		this.line = line;
 	}
 
-	public Bridge getBridge(int index){
+	public Bridge getBridge(int index) {
 		return line.get(index);
 	}
 

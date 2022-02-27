@@ -10,8 +10,8 @@ public class ExecutionResults {
 		this.executionsResults = new ArrayList<>();
 	}
 
-	public void makeExecutionResults(String [] results){
-		for (String result : results){
+	public void makeExecutionResults(String[] results) {
+		for (String result : results) {
 			executionsResults.add(new ExecutionResult(result));
 		}
 	}

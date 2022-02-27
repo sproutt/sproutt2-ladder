@@ -21,7 +21,8 @@ public class LinesDto {
 		}
 		return new LinesDto(lineDtos);
 	}
-	public List<src.dto.BridgesDto> getLinesDto(){
+
+	public List<src.dto.BridgesDto> getLinesDto() {
 		return lines;
 	}
 

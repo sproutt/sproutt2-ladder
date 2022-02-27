@@ -9,11 +9,11 @@ import src.model.player.Player;
 public class ResultAllDto {
 	private Map<String, String> resultAll;
 
-	private ResultAllDto(Map<String, String> resultAll){
+	private ResultAllDto(Map<String, String> resultAll) {
 		this.resultAll = resultAll;
 	}
 
-	public static ResultAllDto from(Map<Player, ExecutionResult> results){
+	public static ResultAllDto from(Map<Player, ExecutionResult> results) {
 		Map<String, String> resultAll = new LinkedHashMap<>();
 		for (Player player : results.keySet()) {
 			String playerName = player.getName();
