@@ -1,6 +1,7 @@
 package domain.line;
 
 import domain.point.Point;
+import domain.point.RandomPointGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,28 +17,28 @@ public class LineGenerator {
         return new Line(generateMultiVerticalLine(points, playerCount));
     }
 
-    public static Point generateOnlyFirstExist() {
+    private static Point generateOnlyFirstExist() {
         return Point.onlyFirstExist();
     }
 
-    public static Point generateFirstPoint() {
-        return Point.first();
+    private static Point generateFirstPoint() {
+        return Point.first(RandomPointGenerator.generate());
     }
 
-    public static Point generateMiddlePoint(Point prePoint) {
-        return Point.next(prePoint);
+    private static Point generateMiddlePoint(Point prePoint) {
+        return Point.next(prePoint, RandomPointGenerator.generate());
     }
 
-    public static Point generateLastPoint(Point prePoint) {
+    private static Point generateLastPoint(Point prePoint) {
         return Point.last(prePoint);
     }
 
-    public static List<Point> generateSingleVerticalLine(List<Point> points) {
+    private static List<Point> generateSingleVerticalLine(List<Point> points) {
         points.add(generateOnlyFirstExist());
         return points;
     }
 
-    public static List<Point> generateMultiVerticalLine(List<Point> points, int playerCount) {
+    private static List<Point> generateMultiVerticalLine(List<Point> points, int playerCount) {
         points.add(generateFirstPoint());
         for (int i = 0; i < playerCount - 2; i++) {
             points.add(generateMiddlePoint(points.get(i)));

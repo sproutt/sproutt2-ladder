@@ -18,15 +18,15 @@ public class Point {
         return new Point(false, false);
     }
 
-    public static Point first() {
-        return new Point(false, RandomPointGenerator.generate());
+    public static Point first(boolean right) {
+        return new Point(false, right);
     }
 
-    public static Point next(Point prePoint) {
+    public static Point next(Point prePoint, boolean right) {
         if (prePoint.right) {
             return new Point(prePoint.right, false);
         }
-        return new Point(false, RandomPointGenerator.generate());
+        return new Point(false, right);
     }
 
     public static Point last(Point prePoint) {
