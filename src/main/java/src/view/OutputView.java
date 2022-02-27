@@ -65,7 +65,7 @@ public class OutputView {
 	public void printSingleResult(ResultsDto resultsDto) {
 		System.out.println(EXECUTION_RESULT_MESSAGE);
 		List<String> results = resultsDto.getResults();
-		String resultMessage = String.join(", ", results);
+		String resultMessage = String.join(RESULTS_SEPARATOR, results);
 		System.out.println(resultMessage);
 	}
 
