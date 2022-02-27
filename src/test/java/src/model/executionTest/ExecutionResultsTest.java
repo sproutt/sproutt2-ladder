@@ -1,4 +1,4 @@
-package src.model;
+package src.model.executionTest;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -18,6 +18,6 @@ class ExecutionResultsTest {
 		ExecutionResults executionResults = new ExecutionResults();
 		executionResults.makeExecutionResults(inputResults);
 
-		Assertions.assertThat(executionResults.getExecutionsResults().get(0)).isEqualTo("꽝");
+		Assertions.assertThat(executionResults.getExecutionsResults().get(0).getResult()).isEqualTo("꽝");
 	}
 }
