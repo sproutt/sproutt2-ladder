@@ -25,17 +25,6 @@ public class Player {
         }
     }
 
-    public void moveOneLine(Line line) {
-        int x = position.getX();
-        move(line.getPoints().get(x).getDirection());
-    }
-
-    public void moveAll(List<Line> lines) {
-        for (int i = 0; i < lines.size(); i++) {
-            moveOneLine(lines.get(i));
-        }
-    }
-
     public String getName() {
         return name.getName();
     }

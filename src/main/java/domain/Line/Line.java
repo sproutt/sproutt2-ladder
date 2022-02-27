@@ -25,4 +25,8 @@ public class Line {
                 .map(point -> point.isRight())
                 .collect(Collectors.toList());
     }
+
+    public Direction findCurrentPointDirection(int x) {
+        return points.get(x).getDirection();
+    }
 }

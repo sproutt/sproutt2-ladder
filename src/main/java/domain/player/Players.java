@@ -33,6 +33,10 @@ public class Players {
         lines.forEach(this::moveOneLine);
     }
 
+    public void moveOneLine(Line line) {
+        players.forEach(player -> player.move(line.findCurrentPointDirection(player.getPosition().getX())));
+    }
+
     public boolean isContain(String playerName) {
         if(!toPlayerNames().contains(playerName)) {
             return false;
