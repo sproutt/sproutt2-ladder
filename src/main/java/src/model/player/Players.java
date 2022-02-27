@@ -19,4 +19,10 @@ public class Players {
 	public List<Player> getPlayers() {
 		return players;
 	}
+
+	public List<Player> findPlayer(String name) {
+		return players.stream()
+				.filter(player -> player.getName().equals(name))
+				.collect(Collectors.toList());
+	}
 }

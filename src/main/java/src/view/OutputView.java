@@ -6,6 +6,7 @@ import java.util.Map;
 import src.dto.BridgesDto;
 import src.dto.LinesDto;
 import src.dto.PlayersDto;
+import src.dto.ResultAllDto;
 import src.dto.ResultsDto;
 
 public class OutputView {
@@ -63,13 +64,16 @@ public class OutputView {
 	}
 
 
-	public void printSingleResult(String string) {
+	public void printSingleResult(ResultsDto resultsDto) {
 		System.out.println(EXECUTION_RESULT_MESSAGE);
-		System.out.println(string);
+		List<String> results = resultsDto.getResults();
+		String resultMessage = String.join(", ", results);
+		System.out.println(resultMessage);
 	}
 
-	public void printAllResult(Map<String, String> resultAll) {
+	public void printAllResult(ResultAllDto resultAllDto) {
 		System.out.println(EXECUTION_RESULT_MESSAGE);
+		Map<String, String> resultAll = resultAllDto.getResultAll();
 		for (String key : resultAll.keySet()) {
 			System.out.println(key + ":" + resultAll.get(key));
 		}

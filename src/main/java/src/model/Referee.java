@@ -1,17 +1,22 @@
 package src.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
+import src.model.excutionResults.ExecutionResult;
+import src.model.excutionResults.ExecutionResults;
 import src.model.ladder.Ladder;
 import src.model.ladder.Line;
+import src.model.player.Player;
+import src.model.player.Players;
 
 public class Referee {
 	private static final int IS_LADDER_BRIDGE_TRUE = 1;
 
 	private ArrayList<Integer> resultIndex = new ArrayList<>();
-	private Map<String, String> map = new HashMap<>();
+	private Map<Player, ExecutionResult> map = new LinkedHashMap<>();
 
 	public ArrayList<Integer> matchingResults(Players players, Ladder ladder) {
 
@@ -37,11 +42,15 @@ public class Referee {
 		}
 	}
 
-	public String find(String name) {
-		return map.get(name);
+	public List<ExecutionResult> find(List<Player> players) {
+		List<ExecutionResult> executionResults = new ArrayList<>();
+		for (Player player : players) {
+			executionResults.add(map.get(player));
+		}
+		return executionResults;
 	}
 
-	public Map<String, String> findAll() {
+	public Map<Player, ExecutionResult> findAll() {
 		return map;
 	}
 }

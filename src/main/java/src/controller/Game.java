@@ -5,7 +5,9 @@ import java.util.Map;
 
 import src.dto.LinesDto;
 import src.dto.PlayersDto;
+import src.dto.ResultAllDto;
 import src.dto.ResultsDto;
+import src.model.excutionResults.ExecutionResult;
 import src.model.excutionResults.ExecutionResults;
 import src.model.Referee;
 import src.model.ladder.Bridge;
@@ -64,16 +66,14 @@ public class Game {
 	private void askResult(Players players, Referee referee) {
 		String specifyPlayer = inputView.inputSpecifyPlayer();
 		if(specifyPlayer.equals("all")) {
-			Map<String, String> resultAll = referee.findAll();
-			outputView.printAllResult(resultAll);
+			Map<Player, ExecutionResult> resultAll = referee.findAll();
+			outputView.printAllResult(ResultAllDto.from(resultAll));
+			return;
 		}
 
-		for (Player player : players.getPlayers()) {
-			if (player.getName().equals(specifyPlayer)) {
-				String result = referee.find(specifyPlayer);
-				outputView.printSingleResult(result);
-				askResult(players, referee);
-			}
-		}
+		List<Player> specifyPlayers = players.findPlayer(specifyPlayer);
+		List<ExecutionResult> executionResults = referee.find(specifyPlayers);
+		outputView.printSingleResult(ResultsDto.from(executionResults));
+
 	}
 }
