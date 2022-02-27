@@ -1,9 +1,6 @@
 package domain.player;
 
-import domain.line.Line;
 import domain.point.Direction;
-
-import java.util.List;
 
 public class Player {
     private Name name;

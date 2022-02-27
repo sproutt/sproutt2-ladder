@@ -1,5 +1,6 @@
 package domain.line;
 
+import domain.point.Direction;
 import domain.point.Point;
 
 import java.util.ArrayList;

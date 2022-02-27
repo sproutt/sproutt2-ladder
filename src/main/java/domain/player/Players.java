@@ -30,7 +30,7 @@ public class Players {
     }
 
     public void moveAll(List<Line> lines) {
-        players.forEach(player -> player.moveAll(lines));
+        lines.forEach(this::moveOneLine);
     }
 
     public boolean isContain(String playerName) {
