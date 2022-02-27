@@ -23,4 +23,8 @@ public class ResultAllDto {
 		}
 		return new ResultAllDto(resultAll);
 	}
+
+	public Map<String, String> getResultAll() {
+		return resultAll;
+	}
 }
