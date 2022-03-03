@@ -24,7 +24,7 @@ class PlayersFactoryTest {
         // when
         Players players = PlayersFactory.from(names);
 
-        // when
+        // then
         assertThat(players.size()).isEqualTo(2);
     }
 }

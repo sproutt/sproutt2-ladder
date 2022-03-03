@@ -51,7 +51,7 @@ public class Game {
 
     private void printMatchedGameResult(Players players, Map<String, String> matchedGameResult) {
         String playerName = inputPlayerName();
-        if(players.isContain(playerName)) {
+        if (players.isContain(playerName)) {
             outputView.printMatchedGameResult(matchedGameResult, playerName);
             printMatchedGameResult(players, matchedGameResult);
         }

@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class HeightTest {
-    
+
     @Test
     @DisplayName("사다리의 높이가 음수일 경우 예외를 처리한다.")
     void testIfLadderHeightIsNegativeThrowsException() {

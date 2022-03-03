@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PositionTest {
     @Test
@@ -56,6 +56,5 @@ class PositionTest {
 
         // then
         assertThat(message).isEqualTo("[ERROR] Position의 x, y 값은 양수입니다.");
-
     }
 }

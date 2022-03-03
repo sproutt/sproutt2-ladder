@@ -38,7 +38,7 @@ public class Players {
     }
 
     public boolean isContain(String playerName) {
-        if(!toPlayerNames().contains(playerName)) {
+        if (!toPlayerNames().contains(playerName)) {
             return false;
         }
         return true;

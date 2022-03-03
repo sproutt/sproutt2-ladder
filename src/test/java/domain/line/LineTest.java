@@ -77,8 +77,4 @@ class LineTest {
         // then
         assertThat(currentPointDirection).isEqualTo(Direction.DOWN);
     }
-
-
-
-
 }

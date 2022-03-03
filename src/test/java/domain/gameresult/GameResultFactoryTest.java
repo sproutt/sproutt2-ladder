@@ -26,7 +26,7 @@ class GameResultFactoryTest {
         // when
         GameResults gameResults = GameResultFactory.from(gameResultNames, ladderHeight);
 
-        // when
+        // then
         assertThat(gameResults.size()).isEqualTo(2);
     }
 }

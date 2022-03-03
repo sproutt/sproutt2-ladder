@@ -16,7 +16,7 @@ class PlayerTest {
         Point nextPoint = Point.next(firstPoint, false);
 
         Direction direction = nextPoint.getDirection();
-        Player player = new Player(new Name("채상엽"), new Position(1,0));
+        Player player = new Player(new Name("채상엽"), new Position(1, 0));
 
         // when
         player.move(direction);
@@ -50,7 +50,7 @@ class PlayerTest {
         // given
         Point point = Point.onlyFirstExist();
         Direction direction = point.getDirection();
-        Player player = new Player(new Name("김성혁"), new Position(0,0));
+        Player player = new Player(new Name("김성혁"), new Position(0, 0));
 
         // when
         player.move(direction);

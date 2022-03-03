@@ -14,7 +14,7 @@ class PlayersTest {
     @DisplayName("결과를 보고 싶은 사람이 참여한 사람들에 포함되어 있다면 true를 반환한다.")
     void testIfPlayersNotContainResultNameReturnTrue() {
         // given
-        Player player = new Player(new Name("홍동건"),new Position(0,0));
+        Player player = new Player(new Name("홍동건"), new Position(0, 0));
         List<Player> players = new ArrayList<>();
         players.add(player);
 
