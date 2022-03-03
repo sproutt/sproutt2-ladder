@@ -1,16 +1,14 @@
 package src.model.ladder;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-
-import src.model.ladder.Height;
 
 public class LadderMaker {
 	private Height height;
-	private int playerNumber;
 
-	public LadderMaker(int height, int playerNumber) {
+	public LadderMaker(int height) {
 		this.height = new Height(height);
-		this.playerNumber = playerNumber;
 	}
 
 	public Ladder makeLadder(int playerNumber) {
@@ -19,7 +17,7 @@ public class LadderMaker {
 		for (int i = 0; i < height.getHeight(); i++) {
 			lines.add(makeLine(playerNumber));
 		}
-		return ladderBlueprint;
+		return new Ladder(lines);
 	}
 
 	private Line makeLine(int playerNumber) {
@@ -30,16 +28,19 @@ public class LadderMaker {
 		return new Line(bridges);
 	}
 
-	private void makeBridge(int[] line, int i) {
+	private void makeBridge(List<Bridge> bridges, int i) {
 		Random random = new Random();
+		if (i % 2 == 0) {
+			bridges.add(new Bridge(-1));
+		}
 		if (i == 1) {
 			bridges.add(new Bridge(random.nextInt(2)));
 		}
-		if (i > 1 && i % 2 == 1 && line[i - 2] == 1) {
-			line[i] = 0;
+		if (i > 1 && i % 2 == 1 && bridges.get(i - 2).getValue() == 1) {
+			bridges.add(new Bridge(0));
 		}
-		if (i > 1 && i % 2 == 1 && line[i - 2] == 0) {
-			line[i] = random.nextInt(2);
+		if (i > 1 && i % 2 == 1 && bridges.get(i - 2).getValue() == 0) {
+			bridges.add(new Bridge(random.nextInt(2)));
 		}
 	}
 

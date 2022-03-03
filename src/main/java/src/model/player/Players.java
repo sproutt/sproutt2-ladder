@@ -2,6 +2,7 @@ package src.model.player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Players {
 	private List<Player> players;

@@ -29,15 +29,37 @@ public class Referee {
 
 	private void matchingEach(int playerIndex, Ladder ladder) {
 		int index = playerIndex;
-		for (int i = 0; i < ladderBlueprint.length; i++) {
-			index = matchingLine(i, index, ladderBlueprint);
+		for (int i = 0; i < ladder.getSize(); i++) {
+			index = matchingLine(index, ladder.getLine(i));
 		}
 		resultIndex.add(index / 2);
 	}
 
+	public int matchingLine(int index, Line line) {
+		if (index == 0 && line.getBridge(index + 1).getValue() == IS_LADDER_BRIDGE_TRUE) {
+			index += 2;
+			return index;
+		}
+		if (index == line.getLine().size() - 1 && line.getBridge(index - 1).getValue() == IS_LADDER_BRIDGE_TRUE) {
+			index -= 2;
+			return index;
+		}
+		if (index != line.getLine().size() - 1 && index != 0
+				&& line.getBridge(index + 1).getValue() == IS_LADDER_BRIDGE_TRUE) {
+			index += 2;
+			return index;
+		}
+		if (index != line.getLine().size() - 1 && index != 0
+				&& line.getBridge(index - 1).getValue() == IS_LADDER_BRIDGE_TRUE) {
+			index -= 2;
+			return index;
+		}
+		return index;
+	}
+
 	public void makeResult(Players players, ExecutionResults executionResults) {
 		for (int i = 0; i < players.getPlayers().size(); i++) {
-			map.put(players.getPlayers().get(i).getName(),
+			map.put(players.getPlayers().get(i),
 					executionResults.getExecutionsResults().get(resultIndex.get(i)));
 		}
 	}
