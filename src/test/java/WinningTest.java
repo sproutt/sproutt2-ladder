@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package model;
 
 import model.Winning;
