@@ -1,10 +1,12 @@
+package model;
+
 import java.util.regex.Pattern;
 
 public class Winning {
     private static final int MINIMUM_NUMBER_SIZE = 0;
     private static final String LOSING_TICKET = "꽝";
+    private static final String numberPattern = "^[0-9]+$";
     private String winningInput;
-    private String numberPattern = "^[0-9]+$";
 
 
     public Winning(String winningInput) {
