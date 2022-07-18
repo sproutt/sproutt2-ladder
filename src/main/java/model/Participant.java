@@ -1,3 +1,5 @@
+package model;
+
 public class Participant {
     private static final int MAX_NAME_SIZE = 5;
     private String name;

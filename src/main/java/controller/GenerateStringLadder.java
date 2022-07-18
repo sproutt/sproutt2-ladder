@@ -1,3 +1,9 @@
+package controller;
+
+import model.Line;
+import model.Participant;
+import model.Winning;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,21 +17,21 @@ public class GenerateStringLadder {
 
         generatedStringLadder.add(toStringParticipantList(participants));
 
-        for (int i = 0; i < lines.size(); i++) {
-            List<String> generatedLine = new ArrayList<>();
-            Line line = lines.get(i);
+        for (Line value : lines) {
+            ArrayList<String> generatedLine = new ArrayList<>();
+            Line line = value;
             generatedLine.add(POINT);
 
             for (int j = 0; j < line.getLine().size(); j++) {
-                if ((line.getLine().get(j)).getConnection() == false) {
+                if (!(line.getLine().get(j)).getConnection()) {
                     generatedLine.add(EMPTY);
                 }
-                if (line.getLine().get(j).getConnection() == true) {
+                if (line.getLine().get(j).getConnection()) {
                     generatedLine.add(CONNECTION);
                 }
                 generatedLine.add(POINT);
             }
-            generatedStringLadder.add((ArrayList<String>) generatedLine);
+            generatedStringLadder.add(generatedLine);
         }
 
         generatedStringLadder.add(toStringWinningList(winnings));
@@ -35,8 +41,8 @@ public class GenerateStringLadder {
 
     private ArrayList<String> toStringParticipantList(List<Participant> participants) {
         ArrayList<String> stringParticipantList = new ArrayList<>();
-        for (int i = 0; i < participants.size(); i++) {
-            stringParticipantList.add(participants.get(i).getName());
+        for (Participant participant : participants) {
+            stringParticipantList.add(participant.getName());
             stringParticipantList.add("  ");
         }
         return stringParticipantList;
@@ -44,8 +50,8 @@ public class GenerateStringLadder {
 
     private ArrayList<String> toStringWinningList(List<Winning> winnings) {
         ArrayList<String> stringWinningList = new ArrayList<>();
-        for (int i = 0; i < winnings.size(); i++) {
-            stringWinningList.add(winnings.get(i).getWinningInput());
+        for (Winning winning : winnings) {
+            stringWinningList.add(winning.getWinningInput());
             stringWinningList.add("  ");
         }
         return stringWinningList;
