@@ -36,4 +36,8 @@ public class Winning {
     private boolean isNumber(String input) {
         return Pattern.matches(numberPattern, input);
     }
+
+    public String getWinningInput() {
+        return winningInput;
+    }
 }
