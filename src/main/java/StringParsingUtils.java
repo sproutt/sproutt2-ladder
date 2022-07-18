@@ -14,6 +14,13 @@ public class StringParsingUtils {
                 .collect(Collectors.toList());
     }
 
+    public static List<Winning> parseToWinning(String input) {
+        String[] stringParsedInput = splitWithComma(removeBlank(input));
+        return Arrays.stream(stringParsedInput)
+                .map(Winning::new)
+                .collect(Collectors.toList());
+    }
+
     private static String[] splitWithComma(String input) {
         return input.split(COMMA);
     }
