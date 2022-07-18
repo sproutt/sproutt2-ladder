@@ -7,6 +7,10 @@ public class Participant {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     private void validateParticipantNameSize(String name) {
         if (name.length() > MAX_NAME_SIZE) {
             throw new RuntimeException("참여자 이름이 5글자 이상입니다.");
