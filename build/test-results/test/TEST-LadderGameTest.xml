@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LadderGameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-18T10:03:14" hostname="JeonginKimui-MacBookAir.local" time="0.026">
+  <properties/>
+  <testcase name="ladderGameTest()" classname="LadderGameTest" time="0.026"/>
+  <system-out><![CDATA[[[july,   , rayna,   , lua,   , zoe,   ], [|, -----, |,      , |, -----, |], [|,      , |,      , |,      , |], [|,      , |, -----, |,      , |], [꽝,   , 1000,   , 2000,   , 3000,   ]]
+july  rayna  lua  zoe  
+|-----|     |-----|
+|     |     |     |
+|     |-----|     |
+꽝  1000  2000  3000  
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
