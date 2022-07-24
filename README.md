@@ -35,13 +35,13 @@
   - `all`을 입력한 경우: 게임 실행 결과 출력
 
 ### model.Point
-- [ ] model.Point 객체 생성
+- [X] model.Point 객체 생성
 
 ### model.Line
-- [ ] 참가자수(model.Player)만큼 model.Point 생성하여 model.Line 초기화
+- [X] 참가자수(model.Player)만큼 model.Point 생성하여 model.Line 초기화
 
 ### model.Ladder
-- [ ] 사다리 관리
+- [ ] 사다리 객체 생성
 - [ ] 입력값에 대한 검증
   - 사다리 높이가 양수인가
 

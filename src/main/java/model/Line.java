@@ -8,14 +8,15 @@ public class Line {
     private static final int NON_CONNECTION = 0;
     private static final int CONNECTION = 1;
     private static final int START_INDEX = 0;
+    private static final int BOUND_NUMBER = 2;
 
     private List<Point> line;
 
-    public Line(int participant) {
+    public Line(int playerSize) {
 
         line = new ArrayList<>();
 
-        for (int i = 0; i < participant - 1; i++) {
+        for (int i = 0; i < playerSize - 1; i++) {
             line.add(new Point(isConnection(i)));
         }
     }
@@ -40,7 +41,7 @@ public class Line {
 
     private boolean selectConnection() {
         Random random = new Random();
-        int randomNumber = random.nextInt(2);
+        int randomNumber = random.nextInt(BOUND_NUMBER);
         if (randomNumber == NON_CONNECTION) {
             return false;
         } else if (randomNumber == CONNECTION) {
