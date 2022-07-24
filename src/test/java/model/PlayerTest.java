@@ -1,16 +1,19 @@
+package model;
+
+import exception.PlayerNameIsOverMaxNameSizeException;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ParticipantTest {
+public class PlayerTest {
     @Test
     public void should_throwException_when_participantName_over_5() {
         // given
         String testName = "crystal";
 
         // when & then
-        assertThatThrownBy(() -> new Participant(testName))
-                .isInstanceOf(RuntimeException.class);
+        assertThatThrownBy(() -> new Player(testName))
+                .isInstanceOf(PlayerNameIsOverMaxNameSizeException.class);
     }
 
     @Test
@@ -19,7 +22,7 @@ public class ParticipantTest {
         String testName = "july";
 
         // when & then
-        assertThatCode(() -> new Participant(testName)).doesNotThrowAnyException();
+        assertThatCode(() -> new Player(testName)).doesNotThrowAnyException();
     }
 }
 
