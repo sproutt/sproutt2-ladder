@@ -50,9 +50,10 @@
 - [ ] 자동 사다리 생성
 
 ### utils.StringParsingUtils
-- [X] `,`을 기준으로 구분
-- [ ] 사용자 문자열을 리스트로 변환
-- [ ] 당첨값 문자열을 리스트로 변환
+- [X] 문자열을 리스트로 변환
+
+### model.Info
+- [X] Ladder 입력값을 받는 Info 객체 생성
 
 ### model.Player 
 - [X] 입력값에 대한 검증
