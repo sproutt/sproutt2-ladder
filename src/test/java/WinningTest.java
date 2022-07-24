@@ -1,3 +1,6 @@
+package model;
+
+import model.Winning;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 

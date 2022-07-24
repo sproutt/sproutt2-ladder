@@ -1,4 +1,4 @@
-# sproutt2-ladder
+ # sproutt2-ladder
 사다리 게임 구현을 위한 저장소
 
 ## 기능 요구사항
@@ -22,47 +22,69 @@
 * 규칙 9: 게터/세터/프로퍼티를 쓰지 않는다.
 
 ## 요구사항 명세
-### InputView
-- [ ] 참여자 이름 입력
-- [ ] 실행 결과 입력
-- [ ] 사다리 높이 입력
+### view.InputView
+- [X] 참여자 이름 입력
+- [X] 실행 결과 입력
+- [X] 사다리 높이 입력
 - [ ] 결과를 보고 싶은 참여자 입력
 
-### OutputView
+### view.OutputView
 - [ ] 사다리 결과 출력
 - [ ] 사다리 게임 실행 결과 출력
   - 참여자의 이름을 입력한 경우: 특정 참여자 실행 결과만 출력
   - `all`을 입력한 경우: 게임 실행 결과 출력
 
-### Ladder
+### model.Point
+- [ ] model.Point 객체 생성
+
+### model.Line
+- [ ] 참가자수(model.Player)만큼 model.Point 생성하여 model.Line 초기화
+
+### model.Ladder
+- [ ] 사다리 관리
 - [ ] 입력값에 대한 검증
   - 사다리 높이가 양수인가
 
-### AutoLadderGenerator
+### LadderGenerator
+- [ ] 참가자수(model.Player)와 높이(Height)만큼 model.Point 생성하여 model.Ladder 초기화
 - [ ] 자동 사다리 생성
 
-### StringParsingUtils
+### utils.StringParsingUtils
 - [X] `,`을 기준으로 구분
+- [ ] 사용자 문자열을 리스트로 변환
+- [ ] 당첨값 문자열을 리스트로 변환
 
-### Participant 
-<<<<<<< HEAD
-- [ ] 입력값에 대한 검증
-  - 각 참여자 이름이 5글자 이하인가
-=======
+### model.Player 
 - [X] 입력값에 대한 검증
   - 참여자 이름이 5글자 이하인가
->>>>>>> 7771a54 (docs : README.md 업데이트)
 
-### WinningList
+### model.WinningList
 - [X] 입력값에 대한 검증
   - 문자를 입력한 경우: `꽝`을 제대로 입력했는가
   - 숫자를 입력한 경우: 양의 정수를 제대로 입력했는가
 
-### LadderGame
+### controller.LadderGame
 - [ ] 사다리 생성
   - 참여자, 게임 결과 입력값, 사다리 높이를 가지고 자동으로 사다리 생성
-  - 참여자, 생성된 사아리, 게임 결과 입력값으로 구성
+  - 참여자, 생성된 사다리, 게임 결과 입력값으로 구성
 - [ ] 사다리 게임 시행
 
 ### LadderGameResult
 - [ ] 참여자와 사다리게임 시행 결과 관리
+
+### view.InputView
+- [X] 참여할 사람 입력
+- [X] 실행 결과 입력
+- [X] 최대 사다리 높이 입력
+- [ ] 결과를 보고 싶은 사람 입력
+- [ ] 참여자 수와 당첨개수가 일치하는가
+
+
+### view.OutputView
+- [ ] 사다리 출력
+- [ ] 실행 결과 출력
+  - [ ] 특정 멤버의 결과 출력
+  - [ ] 전체 멈버의 결과 출력
+
+### controller.GenerateStringLadder
+- [ ] 문자열 사다리 생성
