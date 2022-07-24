@@ -1,7 +1,6 @@
 package view;
 
-import model.Participant;
-import model.Winning;
+import model.Info;
 import utils.StringParsingUtils;
 
 import java.util.List;
@@ -14,14 +13,14 @@ public class InputView {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static List<Participant> inputParticipant() {
+    public static List<Info> inputPlayer() {
         System.out.println(INPUT_PARTICIPANT_MESSAGE);
-        return StringParsingUtils.parseToParticipant(scanner.nextLine());
+        return StringParsingUtils.parseToName(scanner.nextLine());
     }
 
-    public static List<Winning> inputWinning() {
+    public static List<Info> inputWinning() {
         System.out.println(INPUT_WINNING_MESSAGE);
-        return StringParsingUtils.parseToWinning(scanner.nextLine());
+        return StringParsingUtils.parseToName(scanner.nextLine());
     }
 
     public static int inputLadderHeight() {

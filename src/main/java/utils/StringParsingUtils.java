@@ -1,7 +1,6 @@
 package utils;
 
-import model.Participant;
-import model.Winning;
+import model.Info;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,17 +11,10 @@ public class StringParsingUtils {
     public static final String EMPTY = "";
     public static final String COMMA = ",";
 
-    public static List<Participant> parseToParticipant(String input) {
+    public static List<Info> parseToName(String input) {
         String[] stringParsedInput = splitWithComma(removeBlank(input));
         return Arrays.stream(stringParsedInput)
-                .map(Participant::new)
-                .collect(Collectors.toList());
-    }
-
-    public static List<Winning> parseToWinning(String input) {
-        String[] stringParsedInput = splitWithComma(removeBlank(input));
-        return Arrays.stream(stringParsedInput)
-                .map(Winning::new)
+                .map(Info::new)
                 .collect(Collectors.toList());
     }
 
