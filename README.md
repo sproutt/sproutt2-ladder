@@ -41,9 +41,7 @@
 - [X] 참가자수(model.Player)만큼 model.Point 생성하여 model.Line 초기화
 
 ### model.Ladder
-- [ ] 사다리 객체 생성
-- [ ] 입력값에 대한 검증
-  - 사다리 높이가 양수인가
+- [X] model.Ladder 객체 생성
 
 ### LadderGenerator
 - [ ] 참가자수(model.Player)와 높이(Height)만큼 model.Point 생성하여 model.Ladder 초기화
@@ -58,6 +56,9 @@
 ### model.Player 
 - [X] 입력값에 대한 검증
   - 참여자 이름이 5글자 이하인가
+
+### model.Height
+- [X] 사다리 높이가 양수인지 검증
 
 ### model.WinningList
 - [X] 입력값에 대한 검증
