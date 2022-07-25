@@ -51,7 +51,7 @@ bin/
 /out/
 /target/
 build/
-
+.gradle/
 ### STS ###
 .apt_generated
 .classpath
