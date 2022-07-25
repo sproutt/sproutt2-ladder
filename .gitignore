@@ -50,6 +50,7 @@ bin/
 !gradle/wrapper/gradle-wrapper.jar
 /out/
 /target/
+build/
 
 ### STS ###
 .apt_generated
