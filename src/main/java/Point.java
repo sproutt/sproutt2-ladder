@@ -1,7 +1,11 @@
 public class Point {
-    private boolean is_visited;
+    private boolean isConnection;
 
-    public Point(boolean visited) {
-        this.is_visited = visited;
+    public Point(boolean isConnection) {
+        this.isConnection = isConnection;
+    }
+
+    public boolean getConnection() {
+        return isConnection;
     }
 }
