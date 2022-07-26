@@ -6,10 +6,4 @@ public class OutputView {
     public static void outputResultMessage() {
         System.out.println(OUTPUT_LADDER_RESULT);
     }
-
-    public static void outputStringLadder() {
-
-    }
-
-
 }
