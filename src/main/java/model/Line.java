@@ -11,11 +11,11 @@ public class Line {
 
     private List<Point> line;
 
-    public Line(int participant) {
+    public Line(int player) {
 
         line = new ArrayList<>();
 
-        for (int i = 0; i < participant - 1; i++) {
+        for (int i = 0; i < player - 1; i++) {
             line.add(new Point(isConnection(i)));
         }
     }
