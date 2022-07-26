@@ -1,4 +1,5 @@
 import controller.LadderGame;
+import model.Height;
 import model.Info;
 import model.Ladder;
 import view.InputView;
@@ -12,9 +13,9 @@ public class Application {
 
         List<Info> players = InputView.inputPlayer();
         List<Info> winnings = InputView.inputWinning();
-        int height = InputView.inputLadderHeight();
+        Height height = new Height(InputView.inputLadderHeight());
 
         OutputView.outputResultMessage();
-        Ladder ladder = ladderGame.generateLadder(height, players.size());
+        Ladder ladder = ladderGame.generateLadder(height.getHeight(), players.size());
     }
 }
