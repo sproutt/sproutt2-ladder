@@ -1,7 +1,7 @@
 package controller;
 
 import model.Line;
-import model.Participant;
+import model.Player;
 import model.Winning;
 
 import java.util.ArrayList;
@@ -12,10 +12,10 @@ public class GenerateStringLadder {
     private static final String EMPTY = "     ";
     private static final String CONNECTION = "-----";
 
-    public List<ArrayList<String>> generateStringLadder(List<Participant> participants, List<Line> lines, List<Winning> winnings) {
+    public List<ArrayList<String>> generateStringLadder(List<Player> players, List<Line> lines, List<Winning> winnings) {
         List<ArrayList<String>> generatedStringLadder = new ArrayList<>();
 
-        generatedStringLadder.add(toStringParticipantList(participants));
+        generatedStringLadder.add(toStringPlayerList(players));
 
         for (Line value : lines) {
             ArrayList<String> generatedLine = new ArrayList<>();
@@ -39,19 +39,21 @@ public class GenerateStringLadder {
         return generatedStringLadder;
     }
 
-    private ArrayList<String> toStringParticipantList(List<Participant> participants) {
+    // TODO: toStringPlayerList, toStringWinningList 중복제거
+    private ArrayList<String> toStringPlayerList(List<Player> players) {
         ArrayList<String> stringParticipantList = new ArrayList<>();
-        for (Participant participant : participants) {
-            stringParticipantList.add(participant.getName());
+        for (Player player : players) {
+            stringParticipantList.add(player.getInfo());
             stringParticipantList.add("  ");
         }
         return stringParticipantList;
     }
 
+    // TODO: toStringPlayerList, toStringWinningList 중복제거
     private ArrayList<String> toStringWinningList(List<Winning> winnings) {
         ArrayList<String> stringWinningList = new ArrayList<>();
         for (Winning winning : winnings) {
-            stringWinningList.add(winning.getWinningInput());
+            stringWinningList.add(winning.getInfo());
             stringWinningList.add("  ");
         }
         return stringWinningList;
