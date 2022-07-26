@@ -15,14 +15,26 @@ public class Line {
 
         line = new ArrayList<>();
 
-        for (int i = 0; i < player - 1; i++) {
-            line.add(new Point(isConnection(i)));
-        }
+        makeConnection(player, line);
     }
 
     public List<Point> getLine() {
         return line;
     }
+
+    private void makeConnection(int player, List<Point> line) {
+        for (int i = 0; i < player - 1; i++) {
+            line.add(new Point(isConnection(i)));
+        }
+    }
+
+    /*
+    private void makeConnection(int player, List line) {
+        for (int i = 0; i < player - 1; i++) {
+            line.add(new Point(isConnection(i)));
+        }
+    }
+     */
 
     private boolean isConnection(int index) {
         if (index == START_INDEX) {
