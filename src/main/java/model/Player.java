@@ -1,4 +1,7 @@
 package model;
+
+import exception.PlayerNameIsOverMaxNameSizeException;
+
 public class Player extends Info {
     private static final int MAX_NAME_SIZE = 5;
     private static final String OVER_MAX_NAME_SIZE_EXCEPTION = "참여자 이름이 5글자 이상입니다.";
@@ -10,7 +13,7 @@ public class Player extends Info {
 
     private void validatePlayerNameSize(String name) {
         if (name.length() > MAX_NAME_SIZE) {
-            throw new RuntimeException(OVER_MAX_NAME_SIZE_EXCEPTION);
+            throw new PlayerNameIsOverMaxNameSizeException(OVER_MAX_NAME_SIZE_EXCEPTION);
         }
     }
 }
