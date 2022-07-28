@@ -1,13 +1,13 @@
 package model;
 
 public class Point {
-    private boolean isConnection;
+    private Direction direction;
 
-    public Point(boolean isConnection) {
-        this.isConnection = isConnection;
+    public Point(Direction direction) {
+        this.direction = direction;
     }
 
-    public boolean getConnection() {
-        return isConnection;
+    public Direction getDirection() {
+        return direction;
     }
 }

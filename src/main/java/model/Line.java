@@ -8,56 +8,59 @@ public class Line {
     private static final int NON_CONNECTION = 0;
     private static final int CONNECTION = 1;
     private static final int START_INDEX = 0;
+    private static final int BOUND_NUMBER = 2;
 
     private List<Point> line;
+
+    private boolean leftFlag, rightFlag;
 
     public Line(int player) {
 
         line = new ArrayList<>();
 
-        makeConnection(player, line);
+        makeLine(player, line);
     }
 
-    public List<Point> getLine() {
+    public List<Point> getPoints() {
         return line;
     }
 
-    private void makeConnection(int player, List<Point> line) {
-        for (int i = 0; i < player - 1; i++) {
-            line.add(new Point(isConnection(i)));
+    private void makeLine(int player, List<Point> line) {
+        for (int i = 0; i < player; i++) {
+            line.add(new Point(makeDirection(i)));
         }
     }
 
-    /*
-    private void makeConnection(int player, List line) {
-        for (int i = 0; i < player - 1; i++) {
-            line.add(new Point(isConnection(i)));
-        }
-    }
-     */
+    private Direction makeDirection(int index) {
 
-    private boolean isConnection(int index) {
         if (index == START_INDEX) {
-            return selectConnection();
+            leftFlag = false;
+            rightFlag = isVisited();
         }
 
-        boolean beforeConnection = (line.get(index - 1)).getConnection();
-
-        if (beforeConnection) {
-            return false;
+        // DESC : 이후 인덱스부터 방문한 곳이라면
+        if (rightFlag) {
+            leftFlag = true;
+            rightFlag = false;
         }
 
-        return selectConnection();
+        // DESC : 이후 인덱스부터 방문하지 않은 곳이라면
+        if (!rightFlag) {
+            leftFlag = false;
+            rightFlag = isVisited();
+        }
+
+        return new Direction(leftFlag, rightFlag, false);
     }
 
-    private boolean selectConnection() {
+    private boolean isVisited() {
         Random random = new Random();
-        int randomNumber = random.nextInt(2);
+        int randomNumber = random.nextInt(BOUND_NUMBER);
         if (randomNumber == NON_CONNECTION) {
             return false;
         } else if (randomNumber == CONNECTION) {
             return true;
         }
-        return true;
+        return false;
     }
 }

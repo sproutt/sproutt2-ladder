@@ -22,6 +22,9 @@
 * 규칙 9: 게터/세터/프로퍼티를 쓰지 않는다.
 
 ## 요구사항 명세
+### model.Direction
+- [X] Point 방향 관리
+
 ### model.Height
 - [X] 입력값에 대한 검증
   - 높이값이 양수인가
@@ -30,7 +33,7 @@
 - [X] Ladder 입력값을 받는 Info 객체 생성
 
 ### model.Ladder
-- [ ] 사다리 관리
+- [X] 사다리 관리
 
 ### model.Line
 - [X] (참가자수(model.Player)-1)만큼 model.Point 생성하여 model.Line 초기화
@@ -40,7 +43,7 @@
   - 참여자 이름이 5글자 이하인가
 
 ### model.Point
-- [ ] model.Point 객체 생성
+- [X] model.Point 객체 생성
 
 ### model.Winning
 - [X] 입력값에 대한 검증
@@ -51,7 +54,7 @@
 - [X] 참여자 이름 입력
 - [X] 실행 결과 입력
 - [X] 사다리 높이 입력
-- [ ] 결과를 보고 싶은 참여자 입력
+- [X] 결과를 보고 싶은 참여자 입력
 
 ### view.OutputView
 - [ ] 사다리 결과 출력

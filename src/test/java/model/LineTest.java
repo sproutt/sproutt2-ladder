@@ -7,9 +7,9 @@ import static org.assertj.core.api.Assertions.*;
 public class LineTest {
 
     @Test
-    public void should_line_size_is_equal_to_player_size_minus_1() {
+    public void should_line_size_is_equal_to_player_size() {
         int playerSize = 5;
 
-        assertThat(new Line(playerSize).getLine().size()).isEqualTo(playerSize-1);
+        assertThat(new Line(playerSize).getPoints().size()).isEqualTo(playerSize);
     }
 }
