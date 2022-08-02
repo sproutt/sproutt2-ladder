@@ -17,5 +17,7 @@ public class Application {
 
         OutputView.outputResultMessage();
         Ladder ladder = ladderGame.generateLadder(height.getHeight(), players.size());
+
+        ladderGame.getGameResult(ladder);
     }
 }

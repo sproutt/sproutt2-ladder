@@ -36,7 +36,7 @@
 - [X] 사다리 관리
 
 ### model.Line
-- [X] (참가자수(model.Player)-1)만큼 model.Point 생성하여 model.Line 초기화
+- [ ] 참가자 수 크기의 포인트를 갖는 Line 객체 생성
 
 ### model.Player
 - [X] 입력값에 대한 검증
@@ -45,10 +45,18 @@
 ### model.Point
 - [X] model.Point 객체 생성
 
+### model.Position
+- [X] Player의 (x,y) 위치 객체 생성
+
 ### model.Winning
 - [X] 입력값에 대한 검증
   - 문자를 입력한 경우: `꽝`을 제대로 입력했는가
   - 숫자를 입력한 경우: 양의 정수를 제대로 입력했는가
+
+### model.State
+- [X] 사다리를 타는 Player의 상태
+  - 좌표값 반환
+  - 이동 방향 확인
 
 ### view.InputView
 - [X] 참여자 이름 입력
@@ -66,7 +74,7 @@
 - [ ] 문자열 사다리 생성
 
 ### controller.LadderGenerator
-- [ ] 참가자수(model.Player)와 높이(Height)만큼 model.Point 생성하여 model.Ladder 초기화
+- [ ] 참가자수(model.Player)와 높이(model.Height)만큼 model.Point 생성하여 model.Ladder 초기화
 - [ ] 자동 사다리 생성
 
 ### utils.StringParsingUtils

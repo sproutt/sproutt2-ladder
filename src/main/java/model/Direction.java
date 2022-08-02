@@ -3,12 +3,10 @@ package model;
 public class Direction {
     private boolean leftFlag;
     private boolean rightFlag;
-    private boolean downFlag;
 
-    public Direction(boolean leftFlag, boolean rightFlag, boolean downFlag) {
+    public Direction(boolean leftFlag, boolean rightFlag) {
         this.leftFlag = leftFlag;
         this.rightFlag = rightFlag;
-        this.downFlag = downFlag;
     }
 
     public boolean isLeftFlag() {
@@ -17,9 +15,5 @@ public class Direction {
 
     public boolean isRightFlag() {
         return rightFlag;
-    }
-
-    public boolean isDownFlag() {
-        return downFlag;
     }
 }

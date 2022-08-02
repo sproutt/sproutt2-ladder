@@ -12,6 +12,7 @@ public class GenerateStringLadder {
     private static final String EMPTY = "     ";
     private static final String CONNECTION = "-----";
 
+    /*
     public List<ArrayList<String>> generateStringLadder(List<Player> players, List<Line> lines, List<Winning> winnings) {
         List<ArrayList<String>> generatedStringLadder = new ArrayList<>();
 
@@ -22,11 +23,11 @@ public class GenerateStringLadder {
             Line line = value;
             generatedLine.add(POINT);
 
-            for (int j = 0; j < line.getLine().size(); j++) {
-                if (!(line.getLine().get(j)).getConnection()) {
+            for (int j = 0; j < line.getPoints().size(); j++) {
+                if (!(line.getPoints().get(j)).getConnection()) {
                     generatedLine.add(EMPTY);
                 }
-                if (line.getLine().get(j).getConnection()) {
+                if (line.getPoints().get(j).getConnection()) {
                     generatedLine.add(CONNECTION);
                 }
                 generatedLine.add(POINT);
@@ -58,4 +59,6 @@ public class GenerateStringLadder {
         }
         return stringWinningList;
     }
+
+     */
 }
