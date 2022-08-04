@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class PlayerTest {
     @Test
-    public void should_throwException_when_participantName_over_5() {
+    public void should_throw_exception_when_participantName_over_5() {
         // given
         String testName = "crystal";
 
