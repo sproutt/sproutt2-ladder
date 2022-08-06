@@ -1,12 +1,14 @@
 package model;
 
 import exception.PlayerNameIsOverMaxNameSizeException;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class PlayerTest {
+class PlayerTest {
     @Test
+    @DisplayName("참여자 이름이 5글자 이상이면 예외를 발생시킨다.")
     public void should_throw_exception_when_participantName_over_5() {
         // given
         String testName = "crystal";
@@ -17,6 +19,7 @@ public class PlayerTest {
     }
 
     @Test
+    @DisplayName("참여자 이름이 5글자 이하이면 성공이다.")
     public void should_success_when_participantName_below_5() {
         // given
         String testName = "july";
