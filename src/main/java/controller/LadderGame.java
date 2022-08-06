@@ -18,12 +18,12 @@ public class LadderGame {
     public Ladder generateLadder(int height, int player) {
         List<Line> lines = new ArrayList<>();
 
-        ladderHeight = height;
-        gamePlayer = player;
-
-        for (int i = 0; i < height; i++) {
-            lines.add(new Line(player));
-        }
+    public LadderGame(List<Info> players, List<Info> winnings, Height height) {
+        validatePlayerSizeAndWinningSizeIsSame(players, winnings);
+        this.players = players;
+        this.winnings = winnings;
+        this.height = height;
+    }
 
         ladder = new Ladder(lines);
 
