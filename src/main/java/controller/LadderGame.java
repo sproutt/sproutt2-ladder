@@ -32,8 +32,9 @@ public class LadderGame {
 
     public void getGameResult(Ladder ladder) {
 
-        for (int i = 0; i < gamePlayer; i++) {
-            playerState = startMove(new State(new Position(i, 0), false));
+        for (int i = 0; i < players.size(); i++) {
+            this.state = startMove(new State(new Position(i, 0), false));
+            gameResult.put(players.get(i).getStringInfo(), winnings.get(state.getPosition().getX()).getStringInfo());
         }
     }
 
@@ -89,6 +90,7 @@ public class LadderGame {
             return playerState;
         }
 
-        return playerState;
+    public Map<String, String> getGameResult() {
+        return gameResult;
     }
 }

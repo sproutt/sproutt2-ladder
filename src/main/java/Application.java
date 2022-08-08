@@ -17,6 +17,12 @@ public class Application {
         OutputView.outputResultMessage();
         Ladder ladder = ladderGame.generateLadder(height.getHeight(), players.size());
 
-        ladderGame.getGameResult(ladder);
+        Ladder ladder = ladderGame.initLadder();
+        OutputView.printLadderResultMessage();
+        OutputView.printStringLadder(ladder.generateStringLadder(ladder, players, winnings));
+        ladderGame.startGame();
+
+        OutputView.printGameResultMessage();
+        OutputView.printGameResult(ladderGame.getGameResult(), InputView.inputResult());
     }
 }
