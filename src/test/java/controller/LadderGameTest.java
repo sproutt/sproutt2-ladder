@@ -1,7 +1,7 @@
 package controller;
 
 import model.Height;
-import model.Info;
+import model.StringInfo;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,15 +17,15 @@ class LadderGameTest {
     @DisplayName("참가자 사이즈와 당첨 사이즈가 다르면 예외를 발생한다.")
     public void should_throw_exception_when_player_size_and_winning_size_is_not_same() {
         // given
-        List<Info> testPlayer = new ArrayList<>();
-        List<Info> testWinning = new ArrayList<>();
+        List<StringInfo> testPlayer = new ArrayList<>();
+        List<StringInfo> testWinning = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {
-            testPlayer.add(new Info("a"));
+            testPlayer.add(new StringInfo("a"));
         }
 
         for (int i = 0; i < 4; i++) {
-            testWinning.add(new Info("1"));
+            testWinning.add(new StringInfo("1"));
         }
 
         // when
@@ -39,15 +39,15 @@ class LadderGameTest {
     @DisplayName("참가자 사이즈와 당첨 사이즈가 같으면 성공이다.")
     public void should_success_when_player_size_and_winning_size_is_same() {
         // given
-        List<Info> testPlayer = new ArrayList<>();
-        List<Info> testWinning = new ArrayList<>();
+        List<StringInfo> testPlayer = new ArrayList<>();
+        List<StringInfo> testWinning = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {
-            testPlayer.add(new Info("a"));
+            testPlayer.add(new StringInfo("a"));
         }
 
         for (int i = 0; i < 3; i++) {
-            testWinning.add(new Info("1"));
+            testWinning.add(new StringInfo("1"));
         }
 
         // when & then

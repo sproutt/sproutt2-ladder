@@ -15,10 +15,7 @@ public class LadderGame {
     private State playerState;
     private int x, y;
 
-    public Ladder generateLadder(int height, int player) {
-        List<Line> lines = new ArrayList<>();
-
-    public LadderGame(List<Info> players, List<Info> winnings, Height height) {
+    public LadderGame(List<StringInfo> players, List<StringInfo> winnings, Height height) {
         validatePlayerSizeAndWinningSizeIsSame(players, winnings);
         this.players = players;
         this.winnings = winnings;

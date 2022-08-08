@@ -11,7 +11,7 @@ public class OutputView {
     private static final String RESULT_INPUT_IS_NOT_PROPER_EXCEPTION = "입력값이 올바르지 않습니다.";
     private static final String ALL_STRING = "all";
 
-    public static void printResultMessage() {
+    public static void printLadderResultMessage() {
         System.out.println(OUTPUT_LADDER_RESULT);
     }
 

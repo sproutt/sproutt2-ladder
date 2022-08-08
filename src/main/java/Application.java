@@ -14,8 +14,7 @@ public class Application {
         List<StringInfo> winnings = InputView.inputWinning();
         Height height = new Height(InputView.inputLadderHeight());
 
-        OutputView.outputResultMessage();
-        Ladder ladder = ladderGame.generateLadder(height.getHeight(), players.size());
+        LadderGame ladderGame = new LadderGame(players, winnings, height);
 
         Ladder ladder = ladderGame.initLadder();
         OutputView.printLadderResultMessage();
