@@ -1,6 +1,6 @@
 package utils;
 
-import model.Info;
+import model.StringInfo;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,10 +11,10 @@ public class StringParsingUtils {
     public static final String EMPTY = "";
     public static final String COMMA = ",";
 
-    public static List<Info> parseToName(String input) {
+    public static List<StringInfo> parseToName(String input) {
         String[] stringParsedInput = splitWithComma(removeBlank(input));
         return Arrays.stream(stringParsedInput)
-                .map(Info::new)
+                .map(StringInfo::new)
                 .collect(Collectors.toList());
     }
 

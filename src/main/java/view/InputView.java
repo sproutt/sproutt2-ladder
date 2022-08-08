@@ -1,6 +1,6 @@
 package view;
 
-import model.Info;
+import model.StringInfo;
 import utils.StringParsingUtils;
 
 import java.util.List;
@@ -14,12 +14,12 @@ public class InputView {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static List<Info> inputPlayer() {
+    public static List<StringInfo> inputPlayer() {
         System.out.println(INPUT_PARTICIPANT_MESSAGE);
         return StringParsingUtils.parseToName(scanner.nextLine());
     }
 
-    public static List<Info> inputWinning() {
+    public static List<StringInfo> inputWinning() {
         System.out.println(INPUT_WINNING_MESSAGE);
         return StringParsingUtils.parseToName(scanner.nextLine());
     }
