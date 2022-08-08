@@ -60,14 +60,9 @@ public class LadderGame {
             return playerState;
         }
 
-        // DESC: 좌우 이동했다면, Y축 이동한다.
-        if (playerState.movedXAxis()) {
-            playerPosition.moveYAxis(playerPosition.getY() + 1);
-            playerPoint = ladder. getLines().get(playerPosition.getY()).getPoints().get(playerPosition.getX());
-            playerState.moveYAxis();
-
-            return playerState;
-        }
+    private Point getPoint(State state) {
+        return ladder.getLines().get(state.getPosition().getY()).getPoints().get(state.getPosition().getX());
+    }
 
         // DESC: 오른쪽 깃발 있으면 -> 오른쪽으로 이동
         if (direction.isRightFlag()) {

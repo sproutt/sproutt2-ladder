@@ -1,6 +1,5 @@
 import controller.LadderGame;
 import model.Height;
-import model.Info;
 import model.Ladder;
 import model.StringInfo;
 import view.InputView;
